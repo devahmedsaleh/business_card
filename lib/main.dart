@@ -5,6 +5,8 @@ void main() => runApp(BusinessCard());
 class BusinessCard extends StatelessWidget {
   final String _name = 'Ahmed Saleh';
   final String _jobTitle = 'Engineer';
+  final String _phoneNumber = '+00 123 456 789';
+  final String _email = 'ahmedsaleh@email.com';
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,15 @@ class BusinessCard extends StatelessWidget {
         scaffoldBackgroundColor: Colors.teal,
         fontFamily: 'Source Sans Pro',
         dividerColor: Colors.teal.shade100,
+        cardTheme: CardTheme(
+          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+        ),
+        textTheme: TextTheme(
+          subtitle1: TextStyle(
+            color: Colors.teal.shade900,
+            fontSize: 18,
+          ),
+        ),
       ),
       home: Scaffold(
         body: SafeArea(
@@ -47,7 +58,29 @@ class BusinessCard extends StatelessWidget {
                 height: 20,
                 width: 150,
                 child: Divider(),
-              )
+              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    _phoneNumber,
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    _email,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
