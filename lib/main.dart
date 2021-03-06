@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:business_card/input_card.dart';
+
 void main() => runApp(BusinessCard());
 
 class BusinessCard extends StatelessWidget {
@@ -59,27 +61,13 @@ class BusinessCard extends StatelessWidget {
                 width: 150,
                 child: Divider(),
               ),
-              Card(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.phone,
-                    color: Colors.teal,
-                  ),
-                  title: Text(
-                    _phoneNumber,
-                  ),
-                ),
+              InputCard(
+                icon: Icons.phone,
+                title: _phoneNumber,
               ),
-              Card(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.email,
-                    color: Colors.teal,
-                  ),
-                  title: Text(
-                    _email,
-                  ),
-                ),
+              InputCard(
+                icon: Icons.email,
+                title: _email,
               ),
             ],
           ),
