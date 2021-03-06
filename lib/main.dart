@@ -14,6 +14,7 @@ class BusinessCard extends StatelessWidget {
         primaryColor: Colors.teal.shade100,
         scaffoldBackgroundColor: Colors.teal,
         fontFamily: 'Source Sans Pro',
+        dividerColor: Colors.teal.shade100,
       ),
       home: Scaffold(
         body: SafeArea(
@@ -42,6 +43,11 @@ class BusinessCard extends StatelessWidget {
                   letterSpacing: 2.5,
                 ),
               ),
+              SizedBox(
+                height: 20,
+                width: 150,
+                child: Divider(),
+              )
             ],
           ),
         ),
