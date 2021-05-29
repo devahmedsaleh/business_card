@@ -1,14 +1,24 @@
+import 'package:business_card/person.dart';
 import 'package:flutter/material.dart';
 
 import 'package:business_card/input_card.dart';
 
-void main() => runApp(BusinessCard());
+void main() {
+  runApp(
+    BusinessCard(
+      Person(
+        name: 'Ahmed Saleh',
+        email: 'ahmedsaleh@email.com',
+        jobTitle: 'Engineer',
+        phoneNumber: '+00 123 456 789',
+      ),
+    ),
+  );
+}
 
 class BusinessCard extends StatelessWidget {
-  final String _name = 'Ahmed Saleh';
-  final String _jobTitle = 'Engineer';
-  final String _phoneNumber = '+00 123 456 789';
-  final String _email = 'ahmedsaleh@email.com';
+  BusinessCard(this.person);
+  final Person person;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +49,7 @@ class BusinessCard extends StatelessWidget {
                 backgroundImage: AssetImage('images/face.png'),
               ),
               Text(
-                _name,
+                person.name,
                 style: TextStyle(
                   fontFamily: 'Pacifico',
                   fontSize: 40,
@@ -48,7 +58,7 @@ class BusinessCard extends StatelessWidget {
                 ),
               ),
               Text(
-                _jobTitle.toUpperCase(),
+                person.jobTitle.toUpperCase(),
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -63,11 +73,11 @@ class BusinessCard extends StatelessWidget {
               ),
               InputCard(
                 icon: Icons.phone,
-                title: _phoneNumber,
+                title: person.phoneNumber,
               ),
               InputCard(
                 icon: Icons.email,
-                title: _email,
+                title: person.email,
               ),
             ],
           ),

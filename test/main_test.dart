@@ -1,11 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 
+import 'package:business_card/person.dart';
 import 'package:business_card/main.dart';
 
 void main() {
+  Person p = Person(name: '', email: '', phoneNumber: '', jobTitle: '');
+
   testWidgets('should have a circle avatar', (WidgetTester tester) async {
-    await tester.pumpWidget(BusinessCard());
+    await tester.pumpWidget(BusinessCard(p));
 
     final circleAvatarFinder = find.byType(CircleAvatar);
 
@@ -13,7 +16,7 @@ void main() {
   });
 
   testWidgets('should have two cards', (WidgetTester tester) async {
-    await tester.pumpWidget(BusinessCard());
+    await tester.pumpWidget(BusinessCard(p));
 
     final cardFinder = find.byType(Card);
 
