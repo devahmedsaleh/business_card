@@ -2,13 +2,8 @@
 import 'package:flutter/material.dart';
 
 class InputCard extends StatelessWidget {
-  const InputCard({
-    Key key,
-    @required IconData icon,
-    @required String title,
-  })  : icon = icon,
-        title = title,
-        super(key: key);
+  const InputCard({ @required this.icon, @required this.title});
+  
   final IconData icon;
   final String title;
 
